@@ -1,3 +1,7 @@
+output "management_group_policy_set_definitions_id" {
+  description = "Map of id values across all management_group_policy_set_definitions, keyed the same as var.management_group_policy_set_definitions"
+  value       = { for k, v in azurerm_management_group_policy_set_definition.management_group_policy_set_definitions : k => v.id }
+}
 output "management_group_policy_set_definitions_description" {
   description = "Map of description values across all management_group_policy_set_definitions, keyed the same as var.management_group_policy_set_definitions"
   value       = { for k, v in azurerm_management_group_policy_set_definition.management_group_policy_set_definitions : k => v.description }
